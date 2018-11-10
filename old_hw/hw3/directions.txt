@@ -1,0 +1,11 @@
+3 sequences
+
+If a column has a gap, for this assignment ignore the column
+
+Provide well commented code (python or otherwise) that can take this file and calculate two scores:
+entropy
+sum of pairs
+
+Please utilize a BLOSUM62 substitution matrix for the sum of pairs
+
+

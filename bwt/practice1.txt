@@ -1,0 +1,33 @@
+
+	Step 1: rotation
+
+	P	A	T	T	H	E	C	A	T	$
+	$	P	A	T	T	H	E	C	A	T	
+	T	$	P	A	T	T	H	E	C	A
+	A	T	$	P	A	T	T	H	E	C
+	C	A	T	$	P	A	T	T	H	E
+	E	C	A	T	$	P	A	T	T	H
+	H	E	C	A	T	$	P	A	T	T
+	T	H	E	C	A	T	$	P	A	T
+	T	T	H	E	C	A	T	$	P	A
+	A	T	T	H	E	C	A	T	$	P
+	
+	Step 2: lexicographic sort
+	
+	$	P	A	T	T	H	E	C	A	T	
+	A	T	$	P	A	T	T	H	E	C
+	A	T	T	H	E	C	A	T	$	P
+	C	A	T	$	P	A	T	T	H	E
+	E	C	A	T	$	P	A	T	T	H
+	H	E	C	A	T	$	P	A	T	T
+	P	A	T	T	H	E	C	A	T	$
+	T	$	P	A	T	T	H	E	C	A
+	T	H	E	C	A	T	$	P	A	T
+	T	T	H	E	C	A	T	$	P	A
+
+
+	
+	
+	
+	
+	

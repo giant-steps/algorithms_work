@@ -1,0 +1,108 @@
+	
+	Sequence:
+
+	A	C	T	G	C	T	C	G	G	C	T	$
+	
+	Suffix Array
+	
+11	$
+0		A	C	T	G	C	T	C	G	G	C	T	$
+6		C	G	G	C	T	$
+9		C	T	$
+4		C	T	C	G	G	C	T	$
+1		C	T	G	C	T	C	G	G	C	T	$
+8		G	C	T	$
+3		G	C	T	C	G	G	C	T	$
+7		G	G	C	T	$
+10	T	$
+5		T	C	G	G	C	T	$
+2		T	G	C	T	C	G	G	C	T	$
+		
+	
+	Burrows Wheeler Transform
+	
+	First, perform all possible rotations: 	
+	
+	A	C	T	G	C	T	C	G	G	C	T	$
+	
+	$	A	C	T	G	C	T	C	G	G	C	T
+	
+	T	$	A	C	T	G	C	T	C	G	G	C
+	
+	C	T	$	A	C	T	G	C	T	C	G	G
+	
+	G	C	T	$	A	C	T	G	C	T	C	G
+	
+	G	G	C	T	$	A	C	T	G	C	T	C
+	
+	C	G	G	C	T	$	A	C	T	G	C	T
+	
+	T	C	G	G	C	T	$	A	C	T	G	C
+	
+	C	T	C	G	G	C	T	$	A	C	T	G
+	
+	G	C	T	C	G	G	C	T	$	A	C	T
+	
+	T	G	C	T	C	G	G	C	T	$	A	C
+	
+	C	T	G	C	T	C	G	G	C	T	$	A
+	
+	
+	Then, sort lexicographically: 
+	
+	$	A	C	T	G	C	T	C	G	G	C	T
+	
+	A	C	T	G	C	T	C	G	G	C	T	$
+	
+	C	G	G	C	T	$	A	C	T	G	C	T
+	
+	C	T	$	A	C	T	G	C	T	C	G	G
+	
+	C	T	C	G	G	C	T	$	A	C	T	G
+	
+	C	T	G	C	T	C	G	G	C	T	$	A
+	
+	G	C	T	$	A	C	T	G	C	T	C	G
+	
+	G	C	T	C	G	G	C	T	$	A	C	T
+	
+	G	G	C	T	$	A	C	T	G	C	T	C
+	
+	T	$	A	C	T	G	C	T	C	G	G	C
+	
+	T	C	G	G	C	T	$	A	C	T	G	C
+	
+	T	G	C	T	C	G	G	C	T	$	A	C
+	
+	^ this is the Burrows Wheeler Matrix
+	
+	We can then remove all but first and last columns: 
+	
+	$	T
+	
+	A	$
+	
+	C	T
+	
+	C	G
+	
+	C	G
+	
+	C	A
+	
+	G	G
+	
+	G	T
+	
+	G	C
+	
+	T	C
+	
+	T	C
+	
+	T	C
+	
+	This is convenient because the first column can be compressed as: 	$:1, A:1, C:4, G:3, T:3
+	
+	
+	

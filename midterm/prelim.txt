@@ -1,0 +1,93 @@
+
+2. As reported in the HG38 version of the human genome, please answer the following questions about
+the gene, CD8B.
+a. What chromosome is this gene on?
+	chr2
+
+b. What is the start and end coordinate of this gene?
+	chr2:86,815,557-86,861,915
+
+c. What strand of the DNA contains this gene?
+	
+
+d. How many transcripts are in this gene as reported by the RefSeq Consortium?
+	
+
+e. How many distinct exons are reported in the RefSeq transcripts?
+f. How many distinct introns are reported in the RefSeq transcripts?
+g. List the genomic coordinates of 3 introns (start-end) from above which contains a canonical
+splice sites.
+h. List the genomic coordinates of each intron (start-end) from above which contains a noncanonical splice site.
+i. What is the official gene symbol of the nearest gene to CD8B? What strand of the DNA
+contains this nearest neighboring gene? How would the location of these genes be described in relation
+to one another?
+
+
+3. Describe the minimum information needed to unambiguously define the location of a gene? Provide an example using a gene of your choice. 
+	chromosome
+	starting site
+	assumption that you are in reading frame 1
+	strand	
+
+
+4. Align the protein sequences S1 and S2 with a gap opening penalty of 2 and a gap extension penalty of
+1 and the “H2O” substitution cost defined as:
+For amino acids x and y,
++5, if x=y
++1, if x≠y, x,y are both hydrophobic
+H(x,y) = { ‐5, if only one is hydrophobic
+0, if x≠y, neither are hydrophobic
+S1 = GWWPDT
+S2 = WRRKHY
+Write down the Dynamic Programming (DP) recursion for global alignment of S1 and S2. Form and fill out the DP table with traceback indices. Trace the path and form your alignment. Discuss the resulting alignment with respect to the substitution metric H and the affine gap penalty. Compare and contrast the resultant alignment with the alignment generated without the affine gap penalty.	
+	question -- when it says without the affine gap penalty, does it mean 
+
+	question -- if it is a gap on one sequence and then a gap on the other, that is not a continuation, correct? 
+
+		make clear that I made this assumption, & clarify with Christina
+
+
+5. Describe a scenario where a researcher would be interested in investigating both the local and global alignment of two sequences.
+
+think about pros and cons of each, specific uses, -- 
+
+	global -- for when sequences are similar & of roughly equal size
+
+	local -- for dissimilar sequences w/ regions of similarityor similar motifs within larger context
+
+
+	spitball: 
+	possible homologs b/t species? 
+		but there is an indel...
+
+	trying to differentiate b/t 2 possibilities...one being that the genes are homologous -- split phylogenetically a little while back -- one has had an insertion or deletion (or merged with another gene, or something) -- so you don't want to match the entire sequence (maybe they have the same active site or something)
+
+
+	maybe they are mostly dissimilar, with a region of similarity, as with two proteins that share an active site (or something -- maybe find a better example here)
+		OR
+	maybe they are somewhat similar (with changes interspersed), as with homologs that have deviated a bit -- changes are spread out
+
+	in the first case, you would get a poor global alignment but potentially a good local alignment
+
+	in the second case, you might get a decent global alignment but no great local alignments
+
+	you could do both, and see what 
+
+
+		hemoglobin vs myoglobin (local) vs human hemoglobin vs dog hemoglobin (global)	-- possible example? 
+
+		what could be a better example -- another protein -- I like the idea of same active site / subunit in 2 proteins in one species for local and homologs b/t two species for global
+	
+
+6. Bacterial genomes are often circular. To transform to a linear form, some genome assembly programs will pick a random location in the genome to break the circle. Thus, it is possible that running the same program multiple times we would get different answers, corresponding to different circular rotations of the same string. Provide the psuedo-code that will determine if two DNA strings are circular rotations of each other. For example TTGATC is a circular rotation of ATCTTG. You must state all assumptions.
+
+write this code
+
+
+
+7. We can define a set of distinct substrings of a string S that includes all substrings. However, each repeat is only represented once. For example, for the string S = AATATT, this set is: 
+
+{A, T, AA, AT, TA, TT, AAT, ATA, TAT, ATT, AATA, ATAT, TATT, AATAT, ATATT, AATATT}
+
+You are given a suffix tree of S. Provide the pseudo-code for an algorithm that counts the number of distinct substrings of S. For full credit, this should run in O(n) time. 
+
